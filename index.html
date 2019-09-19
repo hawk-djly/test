@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--	utf-8		中文编码格式-->
+		<title>万圣节</title>
+		<style>
+			
+			html,body,div{
+				width: 100%;
+				height: 100%;
+			}
+			
+			div{
+				background-repeat:no-repeat ;
+				background-size: 100% 100%;
+			}
+			#page1{
+				background-image:url(img/halloween1.jpg);
+				
+			}
+			#title{
+				position: fixed;
+				left:325px;
+				top: 170px;
+				animation: titlemove 5s;
+				display: none;
+			}
+			#box{
+				position: fixed;
+				left:325px;
+				bottom: 500px;
+				animation:boxmove 0.2s infinite;
+			}
+			#page2{
+				background-image:url(img/halloween2.jpg);
+				display: none;
+			}
+			#start{
+				position: fixed;
+				left:380px;
+				bottom: 430px;
+			}
+			#pimpkin{
+				position: fixed;
+				left:150px;
+				top: 150px;
+			}
+			#page3{
+				background-image:url(img/halloweenMain.jpg);
+				display: none;
+				
+			}
+			#charm1 {
+				position: fixed;
+				left: 50px;
+				top: 100px;
+				animation:charm1move 4s infinite;
+			}	
+			@keyframes charm1move{
+				0%{
+					left: 50px;
+					top: 100px;
+				}
+				33%{
+					left: 50px;
+					top: 180px;
+				}
+				66%{
+					left: 80px;
+					top: 140px;
+				}
+				100%{
+					left: 50px;
+					top: 100px;
+				}
+			}
+			#charm2 {
+				position: fixed;
+				left: 250px;
+				top: 400px;
+				animation:charm2move 6s infinite;
+			}		
+			@keyframes charm2move{
+					0%{
+					left: 250px;
+					top: 400px;
+				}
+				33%{
+					left: 280px;
+					top: 400px;
+				}
+				66%{
+					left: 320px;
+					top: 350px;
+				}
+				100%{
+					left: 250px;
+					top: 400px;
+				}
+			}
+			#charm3 {
+				position: fixed;
+				left: 50px;
+				top: 650px;
+				animation:charm3move 8s infinite;
+			}	
+			@keyframes charm3move{
+				0%{
+					left: 50px;
+					top: 650px;
+				}
+				50%{
+					left: 600px;
+					top: 700px;
+				}
+				100%{
+					left: 50px;
+					top: 650px;
+				}
+			}	
+			#charm4 {
+				position: fixed;
+				left: 500px;
+				top: 50px;
+				animation:charm4move 10s infinite;
+			}	
+			@keyframes charm4move{
+				0%{
+					left: 500px;
+					top: 50px;
+				}
+				15%{
+					left: 400px;
+					top: 30px;
+				}
+				30%{
+					left: 500px;
+					top: 50px;
+				}
+				65%{
+					left: 500px;
+					top: 450px;
+				}
+				100%{
+					left: 500px;
+					top: 50px;
+				}
+			}		
+			#charm5 {
+				position: fixed;
+				left: 400px;
+				top: 900px;
+				animation:charm5move 3s infinite;
+			}	
+			@keyframes charm5move{
+				0%{
+					left: 400px;
+					top: 900px;
+				}
+				50%{
+					left: 400px;
+					top: 950px;
+				}
+				100%{
+					left: 400px;
+					top: 900px;
+				}
+			}		
+			#charm6 {
+				position: fixed;
+				left: 300px;
+				top: 800px;
+				animation:charm6move 5s infinite;
+			}	
+			@keyframes charm6move{
+				0%{
+					left: 300px;
+					top: 800px;
+				}
+				50%{
+					left: 300px;
+					top: 1250px;
+				}
+				100%{
+					left: 300px;
+					top: 800px;
+				}
+			}			
+			#charm7 {
+				position: fixed;
+				right: 50px;
+				bottom: 300px;
+				animation:charm7move 3s infinite;
+				width: 100px;
+				height: 100px;
+			}	
+			@keyframes charm7move{
+				0%{
+					width: 100px;
+					height: 100px;
+					right: 50px;
+					bottom: 300px;
+				}
+				90%{
+					width: 0px;
+					height: 0px;
+					right: 50px;
+					bottom: 300px;
+				}
+				100%{
+					width: 100px;
+					height: 100px;
+					right: 50px;
+					bottom: 300px;
+				}
+			}						
+			@keyframes boxmove{
+				0%{
+					left: 325px;
+				}
+				50%{
+					left: 335px;
+				}
+				100%{
+					left: 325px;
+				}
+			}
+			@keyframes titlemove{
+				from{
+					opacity: 0;
+				}
+				to{
+					opacity: 1;
+				}
+			}
+			#page4{
+				display: none;
+			}
+		</style>
+	<script>
+		function gotoPage(page){
+			//page赋值多少就显示某一页，其他页面不显示
+			//所有页面不显示，只显示page赋值也
+			var page1 = document.getElementById("page1");
+			var page2 = document.getElementById("page2");
+			var page3 = document.getElementById("page3");
+			var page4 = document.getElementById("page4");
+			page1.style.display="none";
+			page2.style.display="none";
+			page3.style.display="none";
+			page4.style.display="none";
+			var p="page"+page;
+			var showPage=document.getElementById(p)
+			showPage.style.display="block";
+		}
+		function gotoCharm(charm){
+			gotoPage(4);
+			var page4 = document.getElementById("page4");
+			var x="charm"+charm;
+			var p4="url(img/"+x+".jpg)"
+			page4.style.backgroundImage=p4
+		}
+	</script>
+	</head>
+	<body>
+		<div id="page1">
+			<img id="title"	src="img/title.png" />
+			<img id="box"	src="img/box.png"	onclick="gotoPage(2)" />
+		</div>
+		<div id="page2">
+			<img id="pumpkin"	src="img/pumpkin.png" />
+			<img id="start"		src="img/startGame.jpg"		onclick="gotoPage(3)" />
+		</div>
+		
+		<div id="page3">
+			<img id="charm1"  src="img/1.png"	onclick="gotoCharm(1)"/>
+			<img id="charm2"  src="img/2.png"	onclick="gotoCharm(2)"/>
+			<img id="charm3"  src="img/3.png"	onclick="gotoCharm(3)"/>
+			<img id="charm4"  src="img/4.png"	onclick="gotoCharm(4)"/>
+			<img id="charm5"  src="img/5.png"	onclick="gotoCharm(5)"/>
+			<img id="charm6"  src="img/6.png"	onclick="gotoCharm(6)"/>
+			<img id="charm7"  src="img/7.png"	onclick="gotoCharm(7)"/>
+		</div>
+		<div id="page4">
+			
+		</div>
+		
+	</body>
+</html>
